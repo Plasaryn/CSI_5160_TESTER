@@ -2,7 +2,7 @@
 
 ARG PYTHON_VERSION=3.10.11
 
-FROM python:${PYTHON_VERSION}-slim as base
+FROM python:${PYTHON_VERSION}-slim
 
 ENV PYTHONDONTWRITEBYTECODE=1
 
@@ -26,4 +26,4 @@ COPY . .
 EXPOSE 8000
 
 # Run the application.
-CMD ["uvicorn", "main:app" "--reload"]
+CMD ["python", "./main.py"]
